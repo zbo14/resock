@@ -1,7 +1,7 @@
 {
   "name": "resock",
   "version": "0.0.0",
-  "description": "",
+  "description": "TCP sockets with port reuse enabled",
   "main": "lib/index.js",
   "bin": "bin/index.js",
   "scripts": {
@@ -11,11 +11,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "gypfile": true,
-  "keywords": [],
+  "keywords": [
+    "TCP",
+    "networking",
+    "port",
+    "socket"
+  ],
   "author": "Zachary Balder",
   "license": "ISC",
   "dependencies": {
-    "bindings": "^1.5.0"
+    "bindings": "^1.5.0",
+    "pem": "^1.14.4"
   },
   "devDependencies": {
     "eslint": "^7.28.0",

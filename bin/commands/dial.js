@@ -11,8 +11,12 @@ const question = prompt => new Promise(resolve => {
 })
 
 module.exports = async () => {
+  const secure = (process.env.secure || '').trim().toLowerCase() === 'true'
   const [localPort, remoteAddress, remotePort = localPort] = process.argv.slice(3)
-  const sock = await dial(+localPort, +remotePort, remoteAddress)
+  const { sock } = await dial(+localPort, +remotePort, remoteAddress, { secure })
+
+  console.log('Established connection!')
+  console.log('You can now send messages to peer')
 
   sock
     .setEncoding('utf8')
