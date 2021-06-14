@@ -20,7 +20,10 @@ module.exports = async () => {
 
   sock
     .setEncoding('utf8')
-    .on('close', () => console.warn('Socket closed'))
+    .on('close', () => {
+      console.warn('Socket closed')
+      process.exit()
+    })
     .on('data', chunk => console.log('Message from peer:', chunk))
     .on('error', console.error)
 
